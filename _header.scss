@@ -1,0 +1,23 @@
+@mixin flexCen($dir, $bg) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+    background-color: $bg;
+}
+
+
+header {
+    @include flexCen(column, tan);
+
+    height: 100vh;
+    // background-color: #33725d;
+    color: $text;
+    button {
+        background: $primarybtn;
+        &:hover {
+            background: #702255;
+            cursor: pointer;
+        }
+    }
+}

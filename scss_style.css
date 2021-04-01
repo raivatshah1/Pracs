@@ -1,0 +1,33 @@
+header, .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: tan;
+  height: 100vh;
+  color: #970a0a;
+}
+
+header button, .contact button {
+  background: #ce97bb;
+}
+
+header button:hover, .contact button:hover {
+  background: #702255;
+  cursor: pointer;
+}
+
+.contact {
+  background: #ce97bb;
+  width: 820px;
+}
+/*# sourceMappingURL=scss_style.css.map */

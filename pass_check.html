@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check your Password Strength</title>
+    <style>
+        .passCh {
+            border: #315352 5px solid;
+            background-color: #c9f8e4;
+            margin: 100px;
+            padding-left: 30px;
+            width: 40vw;
+            height: 40vh;
+        }
+        .pass {
+            font-size: 25px;
+            padding-left: 12px;
+            width: 200px;
+            color: #315352;
+        }
+        #str {
+            padding-right: 10px;
+            padding-left:10px;
+            padding: 10px;
+            font-weight: bolder;
+            border: #000000 1px solid;
+            margin-right: 25px;
+            margin-top: 50px;
+            width: fit-content;
+        }
+        .weakPass {
+            background-color: #f79d9d;
+            border: #000000 3px solid;
+        }
+        .mediumPass {
+            background-color: #f4f769;
+            border: #000000 3px solid;
+        }
+        .strongPass {
+            background-color: #85c974;
+            border: #000000 3px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class = "passCh" name = "passCh">
+        <h1 class = "h1">Enter Password:
+            <input type = "password" class = "pass" onkeyup="checkPass()" maxlength="16">
+        </h4>
+        <div id="str">Password Strength</div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // $('.pass').on('keyup',function(){
+        //     alert('This length is ' + $(this).val().length);
+        // });
+        function checkPass() {
+            var num = /([0-9])/;
+            var alph = /([a-zA-Z])/;
+            var spec = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+            console.log($(".pass").val().length)
+            console.log($(".pass"))
+            if ($(".pass").val().length < 6) {
+                $("#str").removeClass();
+                $("#str").addClass("weakPass");
+                $("#str").html("WEAK: Please Enter atleast 6 Characters!");
+            }
+            else {
+                if ($(".pass").val().match(num) && $(".pass").val().match(alph) && $(".pass").val().match(spec)) {
+                    $("#str").removeClass();
+                    $("#str").addClass("strongPass");
+                    $("#str").html("STRONG: Your set Password is Strong!");
+                }
+                else {
+                    $("#str").removeClass();
+                    $("#str").addClass("mediumPass");
+                    $("#str").html("MEDIUM: Your password should conain ATLEAST ONE Alphabet, Number and Special Character Each!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

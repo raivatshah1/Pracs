@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style type = "text/css">
+        body {
+            background: #df3d37;
+        }
+        #container {
+            height:600px;
+            width: 450px;
+            margin: 100px auto;
+            background-color: #f7f7f7;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+        }
+        h2 {
+            background: #3b1607;
+            color: white;
+            margin: 0;
+            padding: 10px 100px;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 30px;
+            font-weight: normal;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        p {
+            font-size: 20px;
+        }
+        .serv {
+            padding: 13px 13px 20px 200px;
+            margin-left: 20px;
+            font-size: 25px;
+            box-sizing: border-box;
+        }
+        button {
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            margin: 30px auto;
+            background: #680f0f;
+            border-radius: 5px;
+            width: auto;
+            height: 50px;
+            font-size: 17px;
+            color: white;
+            padding: 8px;
+        }
+        .amt {
+            padding: 5px;
+        }
+        ::placeholder {
+            font-size: 18px;
+        }
+        ::disabled {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Tip Calculator</h2>
+        <div class="calculator">
+            
+            <div id="calc" style="padding-left: 20px;">
+                <p>How Satisfied are you with our Service?
+                    <select id="serv" style="font-size: 20px;" required>
+                        <option value="0" selected disabled>Choose an option</option>
+                        <option value="1">Very Dissatisfied</option>
+                    <option value="2">Somewhat Dissatisfied</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Somewhat Satisfied</option>
+                    <option value="5">Very Satisfied</option>
+                </p></select>
+                <br/>
+                <p>What is your Bill Amount?
+                    <p>Rs.
+                    <input type="text" id="bill" style="font-size: 20px;" placeholder="Enter your Amount" required>
+                </p></p>
+                
+                <p>How much do you want to Tip?
+                    <p>Rs.
+                    <input type="text" id="tip" style="font-size: 20px;" placeholder="Enter as a % of Bill Amount" required>
+                </p></p>
+                <br>
+                <button onclick=calculateTip() type="submit">Calculate Tip Value</button>
+                
+                <p>Final Amount:
+                <textarea name="finalamt" style="font-size: 25px;" id="amt" cols="22" rows="2">
+                </textarea></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+            
+                
+            function calculateTip(a,b) {
+                var a = document.getElementById("bill").value;
+                var b = document.getElementById("tip").value;
+                var text;
+                console.log(typeof a)
+                console.log(typeof b)
+                // text;
+
+                a = parseInt(a);
+                console.log(typeof a)
+                b = parseInt(b);
+                console.log(typeof b)
+                console.log(a)
+                console.log(b)
+
+                if (isNaN(a) || isNaN(b)) {
+                    alert("Invalid Input");
+                }
+                else {
+                document.getElementById("amt").innerHTML = "Your Tip value is Rs." + (a*b)/100;
+                }
+
+            } 
+
+                // if (a!=='NaN' && b!=='NaN') {
+                //     // console.log('in func')      
+                //     document.getElementById("amt").innerHTML = "Your Tip value is Rs." + (a*b)/100;
+                // }
+                // else {
+                //     // function myFunction() {
+                //     alert("Invalid Input!");
+                // }
+
+            // }
+    </script>)
+</body>
+</html>

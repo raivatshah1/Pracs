@@ -1,0 +1,94 @@
+body {
+    background-color: #772b2b;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.todo-wrapper {
+    margin-top: 50px;
+    background-color: rgb(183, 219, 212);
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    font-weight: 600;
+    width: 500px;
+    border: solid;
+    box-sizing: border-box;
+}
+
+.todo-wrapper h2 {
+    font-size: 35px;
+    color: #580f0f;
+}
+
+.todo-wrapper p {
+    font-style: italic;
+    color: gray;
+    /* padding-bottom: ; */
+
+}
+
+.todo-wrapper .completed {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.todo-wrapper input {
+    padding: 3px 10px;
+    font-size: 16px;
+    /* width: 200px; */
+}
+
+.todo-wrapper #add-button {
+    margin-left: 30px;
+    width: 64px;
+    background-color: #243c85;
+}
+
+.todo-wrapper #clear-completed-button {
+    background-color: #363636;
+    margin-right: 25px;
+}
+
+.todo-wrapper #empty-button {
+    background-color: #610508;
+    margin-right: 25px;
+    color: fff;
+}
+
+.todo-wrapper #save-button {
+    background-color: #206120;
+}
+
+.todo-wrapper .pretty-button:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.todo-wrapper .pretty-button {
+    padding: 8px;
+    border-radius: 20px;
+    color: fff;
+}
+
+.todo-wrapper ol {
+    margin: 20px 0;
+}
+
+.todo-wrapper ol li {
+    margin: 5px 0;
+    padding: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+#control-wrapper {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

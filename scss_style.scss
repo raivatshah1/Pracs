@@ -1,0 +1,13 @@
+$primarybtn : #ce97bb;
+$text : #970a0a;
+
+
+@import './header';
+
+.contact {
+    @extend header;
+    @include flexCen();
+
+    background: $primarybtn;
+    width: 820px;
+}
